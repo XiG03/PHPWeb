@@ -1,0 +1,12 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "PSR12": true
+    },
+    "exclude": [
+        "bootstrap",
+        "storage",
+        "vendor"
+    ]
+}
+
