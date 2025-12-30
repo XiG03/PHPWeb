@@ -205,3 +205,31 @@
 #61 D:\\2B_2025_2026\\Management\\Project\\UEF_QLDAPM_B03E_G03\\FinalprojectWeb\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('D:\\\\2B_2025_2026...')
 #62 {main}
 "} 
+[2025-12-30 01:12:29] local.ERROR: Command "view:clean" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    config:clear
+    event:clear
+    optimize:clear
+    queue:clear
+    route:clear
+    view:cache
+    view:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"view:clean\" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    config:clear
+    event:clear
+    optimize:clear
+    queue:clear
+    route:clear
+    view:cache
+    view:clear at D:\\2B_2025_2026\\Management\\Project\\UEF_QLDAPM_B03E_G03\\FinalprojectWeb\\vendor\\symfony\\console\\Application.php:745)
+[stacktrace]
+#0 D:\\2B_2025_2026\\Management\\Project\\UEF_QLDAPM_B03E_G03\\FinalprojectWeb\\vendor\\symfony\\console\\Application.php(266): Symfony\\Component\\Console\\Application->find('view:clean')
+#1 D:\\2B_2025_2026\\Management\\Project\\UEF_QLDAPM_B03E_G03\\FinalprojectWeb\\vendor\\symfony\\console\\Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 D:\\2B_2025_2026\\Management\\Project\\UEF_QLDAPM_B03E_G03\\FinalprojectWeb\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(201): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 D:\\2B_2025_2026\\Management\\Project\\UEF_QLDAPM_B03E_G03\\FinalprojectWeb\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 

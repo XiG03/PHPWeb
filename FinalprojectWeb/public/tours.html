@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wandering Rose Ba Vì - Trải nghiệm & Tours</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Allura&family=Pinyon+Script&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wandering-rose': {
+                            'brown': '#B17A53',
+                            'brown-dark': '#7A5A3F',
+                            'brown-light': '#9E8877',
+                            'beige': '#FFE8D0',
+                            'text-dark': '#231F20',
+                            'dark': '#1a1a1a',
+                            'tan': '#B7907B',
+                        },
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['UTM Avo', 'Arial', 'sans-serif'],
+                        'script': ['Allura', 'Pinyon Script', 'cursive'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* SVN-Bon Voyage Font Face */
+        @font-face {
+            font-family: 'SVN-Bon Voyage';
+            src: url('fonts/SVN-Bon Voyage.ttf') format('truetype'),
+                 url('fonts/SVN-Bon Voyage.otf') format('opentype'),
+                 url('fonts/svn-bon-voyage.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* UTM Avo Font Face */
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Regular.ttf') format('truetype'),
+                 url('fonts/UTM Avo Regular.otf') format('opentype'),
+                 url('fonts/utm-avo-regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Bold.ttf') format('truetype'),
+                 url('fonts/UTM Avo Bold.otf') format('opentype'),
+                 url('fonts/utm-avo-bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body { 
+            font-family: 'UTM Avo', 'Arial', sans-serif; 
+            background: linear-gradient(0deg, rgba(255, 232, 208, 0.20) 0%, rgba(255, 232, 208, 0.20) 100%), #FFF;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: 'SVN-Bon Voyage', 'Playfair Display', serif; 
+        }
+        
+        /* Main Container */
+        .main-container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 94px;
+            padding: 0;
+        }
+        
+        /* Hero Section */
+        .hero-services {
+            width: 100%;
+            height: 960px;
+            padding: 50px 10px;
+            background: linear-gradient(180deg, rgba(35, 31, 32, 0) 56%, rgba(35, 31, 32, 0.80) 100%);
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .hero-title {
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+            text-align: center;
+        }
+        
+        .hero-nav-tabs {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-nav-tab {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .hero-nav-tab:hover {
+            opacity: 0.8;
+        }
+        
+        /* Service Section */
+        .service-section {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .service-content {
+            flex: 1 1 0;
+            max-width: 600px;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .service-title {
+            align-self: stretch;
+            min-width: 350px;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .service-description {
+            align-self: stretch;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        
+        .service-buttons {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            min-width: 39px;
+            padding: 10px;
+            background: #B17A53;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #9E8877;
+        }
+        
+        .btn-secondary {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #B17A53;
+            color: #B17A53;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: #B17A53;
+            color: white;
+        }
+        
+        .arrow-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .arrow-icon::after {
+            content: '';
+            width: 10.50px;
+            height: 10.50px;
+            position: absolute;
+            left: 3.75px;
+            top: 3.75px;
+            border: 1px solid currentColor;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(45deg);
+        }
+        
+        .service-image {
+            flex: 1 1 0;
+            height: 414px;
+            padding: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .service-image-fixed {
+            width: 552px;
+            height: 414px;
+            padding: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        /* Booking Section */
+        .booking-section {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .booking-image-section {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        
+        .booking-image {
+            align-self: stretch;
+            height: 430.50px;
+            padding: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .booking-image-text {
+            align-self: stretch;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+        
+        .booking-form-section {
+            width: 530px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        
+        .booking-form-title {
+            width: 100%;
+            min-width: 350px;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .booking-form {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .form-group {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .form-label {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .form-label-text {
+            color: rgba(35, 31, 32, 0.60);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .form-label-required {
+            color: rgba(35, 31, 32, 0.60);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .form-input {
+            align-self: stretch;
+            min-width: 200px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            border: none;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .form-input::placeholder {
+            color: rgba(35, 31, 32, 0.50);
+        }
+        
+        .form-textarea {
+            align-self: stretch;
+            min-width: 200px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            border: none;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-textarea::placeholder {
+            color: rgba(35, 31, 32, 0.50);
+        }
+        
+        .phone-input-group {
+            align-self: stretch;
+            display: flex;
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .phone-prefix {
+            height: 39px;
+            min-width: 39px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .phone-flag {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-flag img {
+            width: 20px;
+            height: 13px;
+            border-radius: 2px;
+        }
+        
+        .phone-dropdown {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-dropdown::after {
+            content: '';
+            width: 5.25px;
+            height: 10.50px;
+            position: absolute;
+            left: 14.25px;
+            top: 6px;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            border: 1px solid #231F20;
+        }
+        
+        .phone-input {
+            flex: 1 1 0;
+            height: 39px;
+            min-width: 150px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: none;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .phone-input::placeholder {
+            color: rgba(35, 31, 32, 0.50);
+        }
+        
+        .form-select {
+            align-self: stretch;
+            min-width: 150px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            border: none;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.25 10.5L9 6.75L12.75 10.5' stroke='%23231F20' stroke-width='1'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 40px;
+        }
+        
+        /* Footer Section */
+        .footer-services {
+            width: 100%;
+            min-width: 1060px;
+            padding: 50px 155px;
+            background: #B17A53;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 100px;
+        }
+        
+        .footer-news-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-news-title {
+            min-width: 350px;
+            text-align: center;
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .news-carousel-container {
+            width: 1130px;
+            height: 683px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-carousel {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            display: flex;
+        }
+        
+        .news-card-image {
+            width: 350px;
+            height: 467px;
+            padding: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .news-card-content {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .news-category {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .news-title {
+            align-self: stretch;
+            min-width: 200px;
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .news-button {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .news-button:hover {
+            background: white;
+            color: #B17A53;
+        }
+        
+        .news-button .arrow-icon::after {
+            border-color: white;
+        }
+        
+        .news-button:hover .arrow-icon::after {
+            border-color: #B17A53;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .carousel-btn {
+            min-width: 39px;
+            padding: 8px;
+            background: white;
+            border-radius: 200px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: #f0f0f0;
+        }
+        
+        .carousel-btn.prev {
+            transform: rotate(-180deg);
+        }
+        
+        .carousel-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-icon::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            border: 1.50px solid #B17A53;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(45deg);
+        }
+        
+        .footer-links {
+            align-self: stretch;
+            min-width: 750px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            width: 308px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .footer-links-grid {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link-column {
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .footer-link-title {
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .footer-link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .footer-link-item {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-link-item:hover {
+            opacity: 0.8;
+        }
+        
+        .footer-links-row {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom {
+            align-self: stretch;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+        
+        .footer-copyright {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .btn-white-outline {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-white-outline:hover {
+            background: white;
+            color: #B17A53;
+        }
+        
+        .btn-white-outline .arrow-icon::after {
+            border-color: white;
+        }
+        
+        .btn-white-outline:hover .arrow-icon::after {
+            border-color: #B17A53;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1440px) {
+            .main-container {
+                max-width: 100%;
+            }
+            
+            .footer-services {
+                padding: 50px 20px;
+                min-width: auto;
+            }
+            
+            .news-carousel-container {
+                width: 100%;
+                max-width: 1130px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .service-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .booking-form-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .footer-news-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .service-section {
+                flex-direction: column;
+            }
+            
+            .service-image,
+            .service-image-fixed {
+                width: 100%;
+                max-width: 552px;
+            }
+            
+            .booking-section {
+                flex-direction: column;
+            }
+            
+            .booking-form-section {
+                width: 100%;
+            }
+            
+            .news-carousel-container {
+                height: auto;
+            }
+            
+            .news-carousel {
+                position: relative;
+                flex-direction: column;
+            }
+            
+            .news-card {
+                width: 100%;
+            }
+            
+            .news-card-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-services">
+            <h1 class="hero-title">Trải nghiệm & Tours</h1>
+            <div class="hero-nav-tabs">
+                <div class="hero-nav-tab">TOUR VƯỜN QUỐC GIA BA VÌ</div>
+                <div class="hero-nav-tab">TOUR AO VUA</div>
+                <div class="hero-nav-tab">KHOANG XANH - SUỐI TIÊN</div>
+                <div class="hero-nav-tab">TRẢI NGHIỆM BẢN ĐỊA</div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-container">
+            <!-- Tour Vườn Quốc gia Ba Vì Section -->
+            <div class="service-section">
+                <div class="service-content">
+                    <h2 class="service-title">Tour khám phá Vườn Quốc gia Ba Vì</h2>
+                    <p class="service-description">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
+                    <div class="service-buttons">
+                        <button class="btn-primary">
+                            XEM CHI TIẾT
+                        </button>
+                        <button class="btn-secondary">
+                            ĐẶT LỊCH
+                            <div class="arrow-icon"></div>
+                        </button>
+                    </div>
+                </div>
+                <img src="images/tour-bavi.jpg" alt="Tour Vườn Quốc gia Ba Vì" class="service-image">
+            </div>
+
+            <!-- Tour Ao Vua Section -->
+            <div class="service-section">
+                <img src="images/tour-aovua.jpg" alt="Tour Ao Vua" class="service-image-fixed">
+                <div class="service-content">
+                    <h2 class="service-title">Tour Ao Vua</h2>
+                    <p class="service-description">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
+                    <div class="service-buttons">
+                        <button class="btn-primary">
+                            XEM CHI TIẾT
+                        </button>
+                        <button class="btn-secondary">
+                            ĐẶT LỊCH
+                            <div class="arrow-icon"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khoang Xanh – Suối Tiên Section -->
+            <div class="service-section">
+                <div class="service-content">
+                    <h2 class="service-title">Khoang Xanh – Suối Tiên</h2>
+                    <p class="service-description">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
+                    <div class="service-buttons">
+                        <button class="btn-primary">
+                            XEM CHI TIẾT
+                        </button>
+                        <button class="btn-secondary">
+                            ĐẶT LỊCH
+                            <div class="arrow-icon"></div>
+                        </button>
+                    </div>
+                </div>
+                <img src="images/tour-khoangxanh.jpg" alt="Khoang Xanh – Suối Tiên" class="service-image-fixed" style="width: 535px;">
+            </div>
+
+            <!-- Trải nghiệm bản địa Section -->
+            <div class="service-section">
+                <img src="images/tour-bandoia.jpg" alt="Các trải nghiệm bản địa" class="service-image-fixed">
+                <div class="service-content">
+                    <h2 class="service-title">Các trải nghiệm bản địa</h2>
+                    <p class="service-description">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
+                    <div class="service-buttons">
+                        <button class="btn-primary">
+                            XEM CHI TIẾT
+                        </button>
+                        <button class="btn-secondary">
+                            ĐẶT LỊCH
+                            <div class="arrow-icon"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Section -->
+            <div class="booking-section">
+                <div class="booking-image-section">
+                    <img src="images/location-space.jpg" alt="Đặt tour" class="booking-image">
+                    <p class="booking-image-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
+                        Donec lacinia sem eget justo bibendum malesuada.<br/>
+                        Etiam imperdiet odio eget nisl laoreet aliquam.<br/>
+                        Nunc pulvinar ante at lobortis gravida.<br/>
+                        Quisque hendrerit velit nec diam lacinia fermentum.<br/>
+                        Donec pretium augue sed tempus rhoncus.
+                    </p>
+                </div>
+                <div class="booking-form-section">
+                    <h2 class="booking-form-title">Đặt tour</h2>
+                    <form class="booking-form">
+                        <div class="form-group">
+                            <div class="form-label">
+                                <span class="form-label-text">Họ và tên</span>
+                                <span class="form-label-required">*</span>
+                            </div>
+                            <input type="text" class="form-input" placeholder="Nhập họ và tên" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">
+                                <span class="form-label-text">Email</span>
+                                <span class="form-label-required">*</span>
+                            </div>
+                            <input type="email" class="form-input" placeholder="Nhập địa chỉ email" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">
+                                <span class="form-label-text">Số điện thoại</span>
+                                <span class="form-label-required">*</span>
+                            </div>
+                            <div class="phone-input-group">
+                                <div class="phone-prefix">
+                                    <div class="phone-flag">
+                                        <img src="https://flagcdn.com/w20/vn.png" alt="VN">
+                                    </div>
+                                    <div class="phone-dropdown"></div>
+                                </div>
+                                <input type="tel" class="phone-input" placeholder="Nhập số điện thoại" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">
+                                <span class="form-label-text">Chọn dịch vụ</span>
+                                <span class="form-label-required">*</span>
+                            </div>
+                            <select class="form-select" required>
+                                <option value="">Chọn</option>
+                                <option value="bavi">TOUR VƯỜN QUỐC GIA BA VÌ</option>
+                                <option value="aovua">TOUR AO VUA</option>
+                                <option value="khoangxanh">KHOANG XANH - SUỐI TIÊN</option>
+                                <option value="bandoia">CÁC TRẢI NGHIỆM BẢN ĐỊA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">
+                                <span class="form-label-text">Tin nhắn (nếu có)</span>
+                            </div>
+                            <textarea class="form-textarea" placeholder="Nhập tin nhắn"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            GỬI TIN NHẮN ĐẶT LỊCH
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-services">
+        <!-- News and Events Section -->
+        <div class="footer-news-section">
+            <h2 class="footer-news-title">Tin tức và sự kiện</h2>
+            <div class="news-carousel-container">
+                <div class="news-carousel" id="newsCarousel">
+                    <div class="news-card">
+                        <img src="images/news-1.jpg" alt="News 1" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Sự kiện âm nhạc</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="news-button">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="images/news-2.jpg" alt="News 2" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Tên loại tin tức</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="news-button">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="images/news-3.jpg" alt="News 3" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Tên loại tin tức</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="news-button">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="images/news-1.jpg" alt="News 4" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Tên loại tin tức</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="news-button">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-btn prev" id="prevBtn">
+                    <div class="carousel-icon"></div>
+                </button>
+                <button class="carousel-btn" id="nextBtn">
+                    <div class="carousel-icon"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="footer-logo">
+            <svg width="308" height="100" viewBox="0 0 308 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="154" y="50" text-anchor="middle" fill="white" font-family="'SVN-Bon Voyage', serif" font-size="32">THE WANDERING ROSE</text>
+                <text x="154" y="70" text-anchor="middle" fill="white" font-family="'UTM Avo', Arial, sans-serif" font-size="14">Ba Vì</text>
+            </svg>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <div class="footer-links-row">
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">TRANG CHỦ</h3>
+                    <div class="footer-link-list">
+                        <a href="about.html" class="footer-link-item">VỀ CHÚNG TÔI</a>
+                        <a href="#" class="footer-link-item">SỰ KIỆN ÂM NHẠC</a>
+                        <a href="#" class="footer-link-item">GALLERY HÌNH ẢNH & VIDEO</a>
+                        <a href="#" class="footer-link-item">TIN TỨC</a>
+                        <a href="#" class="footer-link-item">FAQ</a>
+                    </div>
+                </div>
+                <div class="footer-link-column" style="flex: 1;">
+                    <h3 class="footer-link-title">HẠNG PHÒNG</h3>
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                        <div class="footer-link-list">
+                            <a href="rooms.html" class="footer-link-item">KHU WOODEN HOUSE</a>
+                            <a href="rooms.html" class="footer-link-item">FOREST ROOM</a>
+                            <a href="rooms.html" class="footer-link-item">DELUXE ROOM</a>
+                            <a href="rooms.html" class="footer-link-item">FAMILY ROOM</a>
+                        </div>
+                        <div class="footer-link-list">
+                            <a href="rooms.html" class="footer-link-item">KHU ROSE HOUSE</a>
+                            <a href="rooms.html" class="footer-link-item">PINK ROSE HOUSE</a>
+                            <a href="rooms.html" class="footer-link-item">WHITE ROSE HOUSE</a>
+                            <a href="rooms.html" class="footer-link-item">RED ROSE HOUSE</a>
+                            <a href="rooms.html" class="footer-link-item">THE WANDERING ROSE VILLA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-links-row">
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">TRẢI NGHIỆM & TOUR</h3>
+                    <div class="footer-link-list">
+                        <a href="tours.html" class="footer-link-item">TOUR VƯỜN QUỐC GIA BA VÌ</a>
+                        <a href="tours.html" class="footer-link-item">TOUR AO VUA</a>
+                        <a href="tours.html" class="footer-link-item">KHOANG XANH - SUỐI TIÊN</a>
+                        <a href="tours.html" class="footer-link-item">CÁC TRẢI NGHIỆM BẢN ĐỊA</a>
+                    </div>
+                </div>
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">DỊCH VỤ SỰ KIỆN</h3>
+                    <div class="footer-link-list">
+                        <a href="services.html" class="footer-link-item">TỔ CHỨC SINH NHẬT</a>
+                        <a href="services.html" class="footer-link-item">TEAMBUILDING</a>
+                        <a href="services.html" class="footer-link-item">TIỆC CƯỚI NHỎ</a>
+                        <a href="services.html" class="footer-link-item">TIỆC KỶ NIỆM</a>
+                        <a href="services.html" class="footer-link-item">ĐĂNG KÝ TỔ CHỨC SỰ KIỆN</a>
+                    </div>
+                </div>
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">LIÊN HỆ</h3>
+                    <div class="footer-link-list">
+                        <p class="footer-link-item" style="cursor: default;">092 981 6699</p>
+                        <p class="footer-link-item" style="cursor: default;">booking@thewanderingrosebavi.com</p>
+                        <p class="footer-link-item" style="cursor: default;">Thôn Mít Mái, Ba Vì, Hà Nội</p>
+                    </div>
+                    <button class="btn-white-outline" style="margin-top: 10px;">
+                        GỬI LIÊN HỆ
+                        <div class="arrow-icon"></div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© Copyright 2025 The Wandering Rose</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Pinterest">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Hero navigation tabs scroll
+        document.querySelectorAll('.hero-nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const text = this.textContent.trim();
+                let targetSection = null;
+                
+                if (text.includes('VƯỜN QUỐC GIA')) {
+                    targetSection = document.querySelectorAll('.service-section')[0];
+                } else if (text.includes('AO VUA')) {
+                    targetSection = document.querySelectorAll('.service-section')[1];
+                } else if (text.includes('KHOANG XANH')) {
+                    targetSection = document.querySelectorAll('.service-section')[2];
+                } else if (text.includes('BẢN ĐỊA')) {
+                    targetSection = document.querySelectorAll('.service-section')[3];
+                }
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // News Carousel
+        let currentSlide = 0;
+        const carousel = document.getElementById('newsCarousel');
+        const cards = carousel.querySelectorAll('.news-card');
+        const totalSlides = cards.length;
+        const visibleSlides = 3;
+        
+        function updateCarousel() {
+            const maxSlide = Math.max(0, totalSlides - visibleSlides);
+            currentSlide = Math.min(Math.max(0, currentSlide), maxSlide);
+            const translateX = -currentSlide * (350 + 24); // card width + gap
+            carousel.style.transform = `translateX(${translateX}px)`;
+        }
+        
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            const maxSlide = Math.max(0, totalSlides - visibleSlides);
+            if (currentSlide < maxSlide) {
+                currentSlide++;
+                updateCarousel();
+            }
+        });
+        
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        });
+        
+        // Form submission
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã đặt tour! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+

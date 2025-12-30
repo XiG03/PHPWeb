@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wandering Rose Ba Vì - FAQ</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Allura&family=Pinyon+Script&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wandering-rose': {
+                            'brown': '#B17A53',
+                            'brown-dark': '#7A5A3F',
+                            'brown-light': '#9E8877',
+                            'beige': '#FFE8D0',
+                            'text-dark': '#231F20',
+                            'dark': '#1a1a1a',
+                            'tan': '#B7907B',
+                        },
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['UTM Avo', 'Arial', 'sans-serif'],
+                        'script': ['Allura', 'Pinyon Script', 'cursive'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* SVN-Bon Voyage Font Face */
+        @font-face {
+            font-family: 'SVN-Bon Voyage';
+            src: url('fonts/SVN-Bon Voyage.ttf') format('truetype'),
+                 url('fonts/SVN-Bon Voyage.otf') format('opentype'),
+                 url('fonts/svn-bon-voyage.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* UTM Avo Font Face */
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Regular.ttf') format('truetype'),
+                 url('fonts/UTM Avo Regular.otf') format('opentype'),
+                 url('fonts/utm-avo-regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Bold.ttf') format('truetype'),
+                 url('fonts/UTM Avo Bold.otf') format('opentype'),
+                 url('fonts/utm-avo-bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body { 
+            font-family: 'UTM Avo', 'Arial', sans-serif; 
+            background: linear-gradient(0deg, rgba(255, 232, 208, 0.20) 0%, rgba(255, 232, 208, 0.20) 100%), white;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: 'SVN-Bon Voyage', 'Playfair Display', serif; 
+        }
+        
+        /* Main Wrapper */
+        .main-wrapper {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .main-container {
+            width: 1440px;
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 100px;
+        }
+        
+        /* Hero Section */
+        .hero-faq {
+            align-self: stretch;
+            width: 100%;
+            height: 960px;
+            padding: 50px 10px;
+            background: linear-gradient(180deg, rgba(35, 31, 32, 0) 56%, rgba(35, 31, 32, 0.80) 100%), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .hero-faq-title {
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+            text-align: center;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        .faq-title {
+            align-self: stretch;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .faq-list {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-item {
+            align-self: stretch;
+            min-width: 175px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #B17A53;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .faq-item-header {
+            align-self: stretch;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .faq-question {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        
+        .faq-chevron {
+            width: 32px;
+            height: 46px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .faq-chevron-icon {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 10px solid #B17A53;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-chevron-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 20px;
+        }
+        
+        /* Footer Section */
+        .footer-section {
+            align-self: stretch;
+            min-width: 1060px;
+            padding: 50px 155px;
+            background: #B17A53;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 100px;
+        }
+        
+        /* News Section */
+        .footer-news-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-news-title {
+            min-width: 350px;
+            text-align: center;
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .news-carousel-container {
+            width: 1130px;
+            max-width: 100%;
+            height: 683px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-carousel {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            display: inline-flex;
+            flex-shrink: 0;
+        }
+        
+        .news-card-image {
+            width: 350px;
+            height: 467px;
+            padding: 10px;
+            overflow: hidden;
+        }
+        
+        .news-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .news-card-content {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .news-category {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .news-title {
+            align-self: stretch;
+            min-width: 200px;
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        
+        .btn-outline-white {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            outline: 1px white solid;
+            outline-offset: -1px;
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-white:hover {
+            background: white;
+            color: #B17A53;
+        }
+        
+        .arrow-icon-white {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .arrow-icon-white::after {
+            content: '';
+            width: 10.50px;
+            height: 10.50px;
+            position: absolute;
+            left: 3.75px;
+            top: 3.75px;
+            border: 1px solid white;
+            border-top: none;
+            border-left: none;
+            transform: rotate(-45deg);
+        }
+        
+        .news-carousel-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .news-carousel-btn {
+            min-width: 39px;
+            padding: 8px;
+            background: white;
+            border-radius: 200px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .news-carousel-btn:hover {
+            background: #f0f0f0;
+        }
+        
+        .news-carousel-btn.left {
+            transform: rotate(-180deg);
+        }
+        
+        .news-carousel-arrow {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .news-carousel-arrow::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            border: 1.50px solid #B17A53;
+            border-top: none;
+            border-left: none;
+            transform: rotate(-45deg);
+        }
+        
+        /* Footer Logo */
+        .footer-logo {
+            width: 308px;
+            height: 100px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Footer Links */
+        .footer-links-container {
+            align-self: stretch;
+            min-width: 750px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-links-row {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links-row.first-row {
+            justify-content: space-between;
+        }
+        
+        .footer-column {
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .footer-column-double {
+            flex: 1 1 0;
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .footer-column-double-content {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column-sub {
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .footer-column-title {
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .footer-link {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
+            display: block;
+        }
+        
+        .footer-link.contact-info {
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        
+        .footer-link:hover {
+            opacity: 0.8;
+        }
+        
+        .footer-bottom {
+            align-self: stretch;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-copyright {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1440px) {
+            .main-container {
+                max-width: 100%;
+            }
+            
+            .footer-section {
+                padding: 50px 40px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .footer-links-row.first-row {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-faq {
+                height: 600px;
+            }
+            
+            .hero-faq-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .faq-title,
+            .footer-news-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .faq-question {
+                font-size: 24px;
+            }
+            
+            .footer-section {
+                padding: 40px 20px;
+                min-width: 100%;
+            }
+            
+            .news-carousel-container {
+                width: 100%;
+                height: auto;
+            }
+            
+            .news-card-image {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="main-container">
+            <!-- Hero Section -->
+            <div class="hero-faq">
+                <h1 class="hero-faq-title">FAQ</h1>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="faq-title">Các câu hỏi thường gặp</h2>
+                <div class="faq-list">
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-item-header">
+                            <div class="faq-question">Đây là câu hỏi thường gặp ?</div>
+                            <div class="faq-chevron">
+                                <div class="faq-chevron-icon"></div>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            Đây là câu trả lời cho câu hỏi thường gặp. Bạn có thể thêm nội dung chi tiết ở đây.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Section -->
+            <div class="footer-section">
+                <!-- News Section -->
+                <div class="footer-news-section">
+                    <h2 class="footer-news-title">Tin tức và sự kiện</h2>
+                    <div class="news-carousel-container">
+                        <div class="news-carousel" id="newsCarousel">
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-1.jpg" alt="News 1">
+                                </div>
+                                <div class="news-card-content">
+                                    <div class="news-category">Sự kiện âm nhạc</div>
+                                    <h3 class="news-title">Tên tin tức</h3>
+                                    <button class="btn-outline-white">
+                                        TÌM HIỂU
+                                        <div class="arrow-icon-white"></div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-2.jpg" alt="News 2">
+                                </div>
+                                <div class="news-card-content">
+                                    <div class="news-category">Tên loại tin tức</div>
+                                    <h3 class="news-title">Tên tin tức</h3>
+                                    <button class="btn-outline-white">
+                                        TÌM HIỂU
+                                        <div class="arrow-icon-white"></div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-3.jpg" alt="News 3">
+                                </div>
+                                <div class="news-card-content">
+                                    <div class="news-category">Tên loại tin tức</div>
+                                    <h3 class="news-title">Tên tin tức</h3>
+                                    <button class="btn-outline-white">
+                                        TÌM HIỂU
+                                        <div class="arrow-icon-white"></div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-1.jpg" alt="News 4">
+                                </div>
+                                <div class="news-card-content">
+                                    <div class="news-category">Tên loại tin tức</div>
+                                    <h3 class="news-title">Tên tin tức</h3>
+                                    <button class="btn-outline-white">
+                                        TÌM HIỂU
+                                        <div class="arrow-icon-white"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-carousel-nav">
+                        <button class="news-carousel-btn left" onclick="scrollNewsCarousel('left')">
+                            <div class="news-carousel-arrow"></div>
+                        </button>
+                        <button class="news-carousel-btn" onclick="scrollNewsCarousel('right')">
+                            <div class="news-carousel-arrow"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <img src="images/Group 1.svg" alt="The Wandering Rose - Ba Vi Logo">
+                </div>
+                
+                <!-- Footer Links -->
+                <div class="footer-links-container">
+                    <!-- First Row: TRANG CHỦ and HẠNG PHÒNG -->
+                    <div class="footer-links-row first-row">
+                        <div class="footer-column">
+                            <div class="footer-column-title">TRANG CHỦ</div>
+                            <div class="footer-column-sub">
+                                <a href="about.html" class="footer-link">VỀ CHÚNG TÔI</a>
+                                <a href="#" class="footer-link">SỰ KIỆN ÂM NHẠC</a>
+                                <a href="#" class="footer-link">GALLERY HÌNH ẢNH & VIDEO</a>
+                                <a href="#" class="footer-link">TIN TỨC</a>
+                                <a href="faq.html" class="footer-link">FAQ</a>
+                            </div>
+                        </div>
+                        <div class="footer-column-double">
+                            <div class="footer-column-title">HẠNG PHÒNG</div>
+                            <div class="footer-column-double-content">
+                                <div class="footer-column-sub">
+                                    <a href="wooden-house.html" class="footer-link">KHU WOODEN HOUSE</a>
+                                    <a href="forest-room.html" class="footer-link">FOREST ROOM</a>
+                                    <a href="deluxe-room.html" class="footer-link">DELUXE ROOM</a>
+                                    <a href="family-room.html" class="footer-link">FAMILY ROOM</a>
+                                </div>
+                                <div class="footer-column-sub">
+                                    <a href="#" class="footer-link">KHU ROSE HOUSE</a>
+                                    <a href="#" class="footer-link">PINK ROSE HOUSE</a>
+                                    <a href="#" class="footer-link">WHITE ROSE HOUSE</a>
+                                    <a href="#" class="footer-link">RED ROSE HOUSE</a>
+                                    <a href="#" class="footer-link">THE WANDERING ROSE VILLA</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Row: TRẢI NGHIỆM & TOUR, DỊCH VỤ SỰ KIỆN, LIÊN HỆ -->
+                    <div class="footer-links-row second-row">
+                        <div class="footer-column">
+                            <div class="footer-column-title">TRẢI NGHIỆM & TOUR</div>
+                            <div class="footer-column-sub">
+                                <a href="tours.html" class="footer-link">TOUR VƯỜN QUỐC GIA BA VÌ</a>
+                                <a href="tours.html" class="footer-link">TOUR AO VUA</a>
+                                <a href="tours.html" class="footer-link">KHOANG XANH - SUỐI TIÊN</a>
+                                <a href="tours.html" class="footer-link">CÁC TRẢI NGHIỆM BẢN ĐỊA</a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <div class="footer-column-title">DỊCH VỤ SỰ KIỆN</div>
+                            <div class="footer-column-sub">
+                                <a href="services.html" class="footer-link">TỔ CHỨC SINH NHẬT</a>
+                                <a href="services.html" class="footer-link">TEAMBUILDING</a>
+                                <a href="services.html" class="footer-link">TIỆC CƯỚI NHỎ</a>
+                                <a href="services.html" class="footer-link">TIỆC KỶ NIỆM</a>
+                                <a href="services.html" class="footer-link">ĐĂNG KÝ TỔ CHỨC SỰ KIỆN</a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <div class="footer-column-title">LIÊN HỆ</div>
+                            <div class="footer-column-sub">
+                                <a href="tel:0929816699" class="footer-link contact-info">092 981 6699</a>
+                                <a href="mailto:booking@thewanderingrosebavi.com" class="footer-link contact-info">booking@thewanderingrosebavi.com</a>
+                                <a href="#" class="footer-link contact-info">Thôn Mít Mái, Ba Vì, Hà Nội</a>
+                            </div>
+                            <button class="btn-outline-white">
+                                GỬI LIÊN HỆ
+                                <div class="arrow-icon-white"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-copyright">© Copyright 2025 The Wandering Rose</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">
+                            <img src="images/Instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="images/Youtube.svg" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // FAQ Accordion Toggle
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+        
+        // News Carousel Scroll
+        let currentNewsIndex = 0;
+        const newsCards = document.querySelectorAll('.news-card');
+        const cardWidth = 350 + 24; // card width + gap
+        const maxIndex = Math.max(0, newsCards.length - 3); // Show 3 cards at a time
+        
+        function scrollNewsCarousel(direction) {
+            if (direction === 'left') {
+                currentNewsIndex = Math.max(0, currentNewsIndex - 1);
+            } else {
+                currentNewsIndex = Math.min(maxIndex, currentNewsIndex + 1);
+            }
+            
+            const carousel = document.getElementById('newsCarousel');
+            carousel.style.transform = `translateX(-${currentNewsIndex * cardWidth}px)`;
+        }
+        
+        // Initialize carousel position
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('newsCarousel');
+            if (carousel) {
+                carousel.style.transform = 'translateX(0px)';
+            }
+        });
+    </script>
+</body>
+</html>
+

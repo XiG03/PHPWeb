@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wandering Rose Ba Vì - Về Chúng Tôi</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Allura&family=Pinyon+Script&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wandering-rose': {
+                            'brown': '#B17A53',
+                            'brown-dark': '#7A5A3F',
+                            'brown-light': '#9E8877',
+                            'beige': '#FFE8D0',
+                            'text-dark': '#231F20',
+                            'dark': '#1a1a1a',
+                            'tan': '#B7907B',
+                        },
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['UTM Avo', 'Arial', 'sans-serif'],
+                        'script': ['Allura', 'Pinyon Script', 'cursive'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* SVN-Bon Voyage Font Face */
+        @font-face {
+            font-family: 'SVN-Bon Voyage';
+            src: url('fonts/SVN-Bon Voyage.ttf') format('truetype'),
+                 url('fonts/SVN-Bon Voyage.otf') format('opentype'),
+                 url('fonts/svn-bon-voyage.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* UTM Avo Font Face */
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Regular.ttf') format('truetype'),
+                 url('fonts/UTM Avo Regular.otf') format('opentype'),
+                 url('fonts/utm-avo-regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Bold.ttf') format('truetype'),
+                 url('fonts/UTM Avo Bold.otf') format('opentype'),
+                 url('fonts/utm-avo-bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body { 
+            font-family: 'UTM Avo', 'Arial', sans-serif; 
+            background: linear-gradient(0deg, rgba(255, 232, 208, 0.20) 0%, rgba(255, 232, 208, 0.20) 100%), #FFF;
+        }
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: 'SVN-Bon Voyage', 'Playfair Display', serif; 
+        }
+        
+        /* Main Container */
+        .main-container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 100px;
+            padding: 40px 0;
+            overflow: visible;
+        }
+        
+        /* Hero Section */
+        .hero-about {
+            width: 100%;
+            height: 960px;
+            padding: 50px 10px;
+            background: linear-gradient(180deg, rgba(35, 31, 32, 0) 56%, rgba(35, 31, 32, 0.80) 100%);
+            background-image: url('images/about-us-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .hero-title {
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+            text-align: center;
+        }
+        
+        .hero-nav-tabs {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-nav-tab {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .hero-nav-tab:hover {
+            opacity: 0.8;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        .story-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .story-header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .story-title {
+            flex: 1 1 0;
+            min-width: 350px;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .story-text-intro {
+            flex: 1 1 0;
+            max-width: 550px;
+            min-width: 350px;
+            text-align: justify;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .story-images {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .story-image {
+            flex: 1 1 0;
+            height: 414px;
+            min-width: 300px;
+            padding: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .story-texts {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .story-text {
+            flex: 1 1 0;
+            max-width: 550px;
+            min-width: 350px;
+            text-align: justify;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        /* Vision & Values Section */
+        .vision-values-section {
+            width: 100%;
+            max-width: 1126px;
+            height: 950px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        .vision-values-title {
+            width: 100%;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .vision-item {
+            width: 100%;
+            max-width: 1126px;
+            min-width: 350px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .vision-image {
+            flex: 1 1 0;
+            height: 414px;
+            min-width: 350px;
+            padding: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .vision-content {
+            flex: 1 1 0;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .vision-subtitle {
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .vision-text {
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .vision-text-right {
+            text-align: right;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            align-self: stretch;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+            padding: 0;
+        }
+        
+        .gallery-header {
+            width: 1126px;
+            height: 141px;
+            max-width: 1126px;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .gallery-title {
+            align-self: stretch;
+            min-width: 350px;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .btn-primary {
+            min-width: 39px;
+            padding: 10px;
+            background: #B17A53;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #9a6845;
+        }
+        
+        .arrow-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .arrow-icon::after {
+            content: '';
+            width: 10.50px;
+            height: 10.50px;
+            position: absolute;
+            left: 3.75px;
+            top: 3.75px;
+            border: 1px solid currentColor;
+            border-top: none;
+            border-left: none;
+            transform: rotate(-45deg);
+        }
+        
+        .gallery-section-inner {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .gallery-row {
+            align-self: stretch;
+            height: 360px;
+            position: relative;
+        }
+        
+        .gallery-items {
+            padding-left: 156px;
+            padding-right: 156px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .gallery-image {
+            width: 360px;
+            height: 360px;
+            padding: 10px;
+            object-fit: cover;
+        }
+        
+        .gallery-video-row {
+            align-self: stretch;
+            height: 311px;
+            position: relative;
+        }
+        
+        .gallery-video-items {
+            padding-left: 156px;
+            padding-right: 156px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .gallery-video-item {
+            width: 552px;
+            height: 311px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .video-play-button {
+            min-width: 39px;
+            padding: 8px;
+            position: absolute;
+            left: 256px;
+            top: 136px;
+            background: rgba(35, 31, 32, 0.70);
+            border-radius: 200px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .play-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+        
+        .play-icon::after {
+            content: '';
+            width: 14px;
+            height: 18px;
+            position: absolute;
+            left: 7px;
+            top: 3px;
+            background: white;
+            clip-path: polygon(0 0, 0 100%, 100% 50%);
+        }
+        
+        .carousel-nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .carousel-btn {
+            min-width: 39px;
+            padding: 8px;
+            background: #B17A53;
+            border-radius: 200px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: #9a6845;
+        }
+        
+        .carousel-btn.prev {
+            transform: rotate(-180deg);
+        }
+        
+        .carousel-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-icon::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            border: 1.50px solid white;
+            border-top: none;
+            border-left: none;
+            transform: rotate(-45deg);
+        }
+        
+        /* Footer */
+        .footer-about {
+            width: 100%;
+            min-width: 1060px;
+            padding: 50px 155px;
+            background: #B17A53;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+        }
+        
+        .footer-news-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-news-title {
+            min-width: 350px;
+            text-align: center;
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .news-carousel {
+            width: 1130px;
+            height: 683px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-items {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            gap: 24px;
+        }
+        
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 350px;
+        }
+        
+        .news-card-image {
+            width: 350px;
+            height: 467px;
+            padding: 10px;
+            object-fit: cover;
+        }
+        
+        .news-card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .news-category {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .news-title {
+            min-width: 200px;
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .btn-white-outline {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            background: transparent;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-white-outline:hover {
+            background: white;
+            color: #B17A53;
+        }
+        
+        .carousel-nav-white {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .carousel-btn-white {
+            min-width: 39px;
+            padding: 8px;
+            background: white;
+            border-radius: 200px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn-white:hover {
+            background: #f0f0f0;
+        }
+        
+        .carousel-btn-white.prev {
+            transform: rotate(-180deg);
+        }
+        
+        .carousel-icon-brown {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-icon-brown::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            border: 1.50px solid #B17A53;
+            border-top: none;
+            border-left: none;
+            transform: rotate(-45deg);
+        }
+        
+        .footer-links {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .footer-links-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link-column {
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .footer-link-title {
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .footer-link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .footer-link-item {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-link-item:hover {
+            opacity: 0.8;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+        
+        .footer-copyright {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1440px) {
+            .main-container {
+                max-width: 100%;
+            }
+            
+            .footer-about {
+                padding: 50px 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .story-title,
+            .vision-values-title,
+            .gallery-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .gallery-items,
+            .gallery-video-items {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .gallery-image {
+                width: 100%;
+                max-width: 360px;
+            }
+            
+            .gallery-video-item {
+                width: 100%;
+                max-width: 552px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] hidden">
+        <!-- Header content same as before -->
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-about">
+            <h1 class="hero-title">Về chúng tôi</h1>
+            <div class="hero-nav-tabs">
+                <div class="hero-nav-tab">CÂU CHUYỆN HÌNH THÀNH VILLA</div>
+                <div class="hero-nav-tab">TẦM NHÌN & GIÁ TRỊ</div>
+                <div class="hero-nav-tab">HÌNH ẢNH & VIDEO</div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-container">
+            <!-- Story Section: Câu chuyện hình thành Villa -->
+            <div class="content-section">
+                <div class="story-section">
+                    <div class="story-header">
+                        <h2 class="story-title">Câu chuyện hình thành Villa</h2>
+                        <p class="story-text-intro">
+                            The Wandering Rose Villa ra đời từ giấc mơ về một chốn nghỉ dưỡng bình yên giữa lòng Ba Vì xanh mát. Chúng tôi mong muốn tạo nên một villa gần Hà Nội nơi du khách có thể tìm lại sự tĩnh tại, quên đi nhịp sống ồn ào phố thị.<br/>
+                        </p>
+                    </div>
+                    
+                    <div class="story-images">
+                        <img src="images/story-image-1.jpg" alt="Story" class="story-image">
+                        <img src="images/story-image-2.jpg" alt="Story" class="story-image">
+                        <img src="images/story-image-3.jpg" alt="Story" class="story-image">
+                    </div>
+                    
+                    <div class="story-texts">
+                        <p class="story-text">
+                            Mỗi góc nhỏ của villa đều được chăm chút tỉ mỉ: khu vườn ngập tràn hoa hồng, bể bơi trong xanh, những căn phòng ấm áp với ánh nắng chan hòa. Không chỉ là một biệt thự nghỉ dưỡng ở Ba Vì, nơi đây còn là điểm hẹn của cảm xúc - dành cho cặp đôi tìm sự lãng mạn, gia đình muốn gắn kết, hay nhóm bạn cần khoảng thời gian tái tạo năng lượng.
+                        </p>
+                        <p class="story-text">
+                            Với khát khao mang lại trải nghiệm trọn vẹn, chúng tôi tin rằng The Wandering Rose Villa sẽ là điểm dừng chân lý tưởng để bạn tận hưởng thiên nhiên, lưu giữ kỷ niệm và tìm lại sự cân bằng trong cuộc sống
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision & Values Section -->
+            <div class="vision-values-section">
+                <h2 class="vision-values-title">Tầm nhìn & giá trị</h2>
+                
+                <div class="vision-item">
+                    <img src="images/vision-garden.jpg" alt="Tầm nhìn" class="vision-image">
+                    <div class="vision-content">
+                        <h3 class="vision-subtitle">Tầm nhìn</h3>
+                        <p class="vision-text">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="vision-item">
+                    <div class="vision-content">
+                        <h3 class="vision-subtitle">Giá trị</h3>
+                        <p class="vision-text vision-text-right">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        </p>
+                    </div>
+                    <img src="images/values-map.jpg" alt="Giá trị" class="vision-image">
+                </div>
+            </div>
+            
+            <!-- Gallery Section: Hình ảnh & Video -->
+            <div class="gallery-section">
+                <div class="gallery-header">
+                    <h2 class="gallery-title">Hình ảnh & video</h2>
+                    <button class="btn-primary">
+                        XEM THÊM
+                        <div class="arrow-icon"></div>
+                    </button>
+                </div>
+                
+                <div class="gallery-section-inner">
+                    <div class="gallery-row">
+                        <div class="gallery-items">
+                            <img src="images/nature-harmony.jpg" alt="Gallery" class="gallery-image">
+                            <img src="images/location-space.jpg" alt="Gallery" class="gallery-image">
+                            <img src="images/gallery-image-3.jpg" alt="Gallery" class="gallery-image">
+                            <img src="images/gallery-image-4.jpg" alt="Gallery" class="gallery-image">
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev">
+                            <div class="carousel-icon"></div>
+                        </button>
+                        <button class="carousel-btn">
+                            <div class="carousel-icon"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="gallery-video-row">
+                        <div class="gallery-video-items">
+                            <div class="gallery-video-item" style="background-image: url('images/tour-bavi.jpg');">
+                                <button class="video-play-button">
+                                    <div class="play-icon"></div>
+                                </button>
+                            </div>
+                            <div class="gallery-video-item" style="background-image: url('images/tour-aovua.jpg');">
+                                <button class="video-play-button">
+                                    <div class="play-icon"></div>
+                                </button>
+                            </div>
+                            <div class="gallery-video-item" style="background-image: url('images/tour-khoangxanh.jpg');">
+                                <button class="video-play-button">
+                                    <div class="play-icon"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev">
+                            <div class="carousel-icon"></div>
+                        </button>
+                        <button class="carousel-btn">
+                            <div class="carousel-icon"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-about">
+        <div class="footer-news-section">
+            <h2 class="footer-news-title">Tin tức và sự kiện</h2>
+            
+            <div class="news-carousel">
+                <div class="news-items">
+                    <div class="news-card">
+                        <img src="images/news-1.jpg" alt="News" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Sự kiện âm nhạc</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="btn-white-outline">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="images/news-2.jpg" alt="News" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Tên loại tin tức</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="btn-white-outline">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="images/news-3.jpg" alt="News" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Tên loại tin tức</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="btn-white-outline">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="images/news-1.jpg" alt="News" class="news-card-image">
+                        <div class="news-card-content">
+                            <p class="news-category">Tên loại tin tức</p>
+                            <h3 class="news-title">Tên tin tức</h3>
+                            <button class="btn-white-outline">
+                                TÌM HIỂU
+                                <div class="arrow-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-nav-white">
+                <button class="carousel-btn-white prev">
+                    <div class="carousel-icon-brown"></div>
+                </button>
+                <button class="carousel-btn-white">
+                    <div class="carousel-icon-brown"></div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Logo -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <div style="width: 308px; height: 100px; margin: 0 auto; position: relative;">
+                <!-- Logo SVG placeholder - you can replace with actual logo -->
+                <svg width="308" height="100" viewBox="0 0 308 100" fill="none">
+                    <text x="154" y="50" text-anchor="middle" fill="white" font-family="'SVN-Bon Voyage', serif" font-size="32">THE WANDERING ROSE</text>
+                    <text x="154" y="70" text-anchor="middle" fill="white" font-family="'UTM Avo', Arial, sans-serif" font-size="14">Ba Vì</text>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <div class="footer-links-row">
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">TRANG CHỦ</h3>
+                    <div class="footer-link-list">
+                        <a href="about.html" class="footer-link-item">VỀ CHÚNG TÔI</a>
+                        <a href="#" class="footer-link-item">SỰ KIỆN ÂM NHẠC</a>
+                        <a href="#" class="footer-link-item">GALLERY HÌNH ẢNH & VIDEO</a>
+                        <a href="#" class="footer-link-item">TIN TỨC</a>
+                        <a href="#" class="footer-link-item">FAQ</a>
+                    </div>
+                </div>
+                <div class="footer-link-column" style="flex: 1;">
+                    <h3 class="footer-link-title">HẠNG PHÒNG</h3>
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                        <div class="footer-link-list">
+                            <a href="rooms.html" class="footer-link-item">KHU WOODEN HOUSE</a>
+                            <a href="#" class="footer-link-item">FOREST ROOM</a>
+                            <a href="#" class="footer-link-item">DELUXE ROOM</a>
+                            <a href="#" class="footer-link-item">FAMILY ROOM</a>
+                        </div>
+                        <div class="footer-link-list">
+                            <a href="#" class="footer-link-item">KHU ROSE HOUSE</a>
+                            <a href="#" class="footer-link-item">PINK ROSE HOUSE</a>
+                            <a href="#" class="footer-link-item">WHITE ROSE HOUSE</a>
+                            <a href="#" class="footer-link-item">RED ROSE HOUSE</a>
+                            <a href="#" class="footer-link-item">THE WANDERING ROSE VILLA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-links-row">
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">TRẢI NGHIỆM & TOUR</h3>
+                    <div class="footer-link-list">
+                        <a href="#" class="footer-link-item">TOUR VƯỜN QUỐC GIA BA VÌ</a>
+                        <a href="#" class="footer-link-item">TOUR AO VUA</a>
+                        <a href="#" class="footer-link-item">KHOANG XANH - SUỐI TIÊN</a>
+                        <a href="#" class="footer-link-item">CÁC TRẢI NGHIỆM BẢN ĐỊA</a>
+                    </div>
+                </div>
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">DỊCH VỤ SỰ KIỆN</h3>
+                    <div class="footer-link-list">
+                        <a href="#" class="footer-link-item">TỔ CHỨC SINH NHẬT</a>
+                        <a href="#" class="footer-link-item">TEAMBUILDING</a>
+                        <a href="#" class="footer-link-item">TIỆC CƯỚI NHỎ</a>
+                        <a href="#" class="footer-link-item">TIỆC KỶ NIỆM</a>
+                        <a href="#" class="footer-link-item">ĐĂNG KÝ TỔ CHỨC SỰ KIỆN</a>
+                    </div>
+                </div>
+                <div class="footer-link-column">
+                    <h3 class="footer-link-title">LIÊN HỆ</h3>
+                    <div class="footer-link-list">
+                        <p class="footer-link-item" style="cursor: default;">092 981 6699</p>
+                        <p class="footer-link-item" style="cursor: default;">booking@thewanderingrosebavi.com</p>
+                        <p class="footer-link-item" style="cursor: default;">Thôn Mít Mái, Ba Vì, Hà Nội</p>
+                    </div>
+                    <button class="btn-white-outline" style="margin-top: 10px;">
+                        GỬI LIÊN HỆ
+                        <div class="arrow-icon"></div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© Copyright 2025 The Wandering Rose</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Pinterest">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Hero navigation tabs scroll
+        document.querySelectorAll('.hero-nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const text = this.textContent.trim();
+                let targetSection = null;
+                
+                if (text.includes('CÂU CHUYỆN')) {
+                    targetSection = document.querySelector('.content-section');
+                } else if (text.includes('TẦM NHÌN')) {
+                    targetSection = document.querySelector('.vision-values-section');
+                } else if (text.includes('HÌNH ẢNH')) {
+                    targetSection = document.querySelector('.gallery-section');
+                }
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

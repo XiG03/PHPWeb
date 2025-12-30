@@ -1,6 +1,8 @@
-<?php $__env->startSection('title', 'The Wandering Rose Ba Vì - Trang Chủ'); ?>
+@extends('layouts.app')
 
-<?php $__env->startSection('content'); ?>
+@section('title', 'The Wandering Rose Ba Vì - Trang Chủ')
+
+@section('content')
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center -mt-28 md:-mt-44" style="background-image: url('/images/hero-bg.jpg'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black/40"></div>
@@ -558,9 +560,9 @@
             </div>
         </div>
     </section>
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('scripts'); ?>
+@section('scripts')
 <script>
     // Room Carousel
     const roomCarousel = document.getElementById('roomCarousel');
@@ -622,9 +624,7 @@
         });
     }
 </script>
-<?php $__env->stopSection(); ?>
+@endsection
 
 
 
-
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\2B_2025_2026\Management\Project\UEF_QLDAPM_B03E_G03\FinalprojectWeb\resources\views/home.blade.php ENDPATH**/ ?>

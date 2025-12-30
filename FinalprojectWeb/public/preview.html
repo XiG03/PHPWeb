@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wandering Rose Ba Vì - Preview</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Allura&family=Pinyon+Script&display=swap" rel="stylesheet" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'UTM Avo', Arial, sans-serif;
+            background: linear-gradient(0deg, rgba(255, 232, 208, 0.20) 0%, rgba(255, 232, 208, 0.20) 100%), #FFF;
+            color: #231F20;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Font Faces */
+        @font-face {
+            font-family: 'SVN-Bon Voyage';
+            src: url('fonts/SVN-Bon Voyage.ttf') format('truetype'),
+                 url('fonts/SVN-Bon Voyage.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Regular.ttf') format('truetype'),
+                 url('fonts/UTM Avo Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* Main Container */
+        .main-wrapper {
+            position: relative;
+            background: linear-gradient(0deg, rgba(255, 232, 208, 0.20) 0%, rgba(255, 232, 208, 0.20) 100%), white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            min-height: 100vh;
+        }
+        
+        .page-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        /* Header - Fixed */
+        .header-container {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        /* Top Booking Bar */
+        .booking-bar {
+            width: 100%;
+            min-width: 770px;
+            background: #231F20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .booking-content {
+            width: 100%;
+            max-width: 1128px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .booking-text {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .booking-controls {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .date-input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .date-input-label {
+            color: white;
+            font-size: 10px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .date-input {
+            width: 150px;
+            min-width: 150px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            position: relative;
+        }
+        
+        .date-input-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .date-input-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .date-input::placeholder {
+            color: rgba(35, 31, 32, 0.50);
+        }
+        
+        .booking-button {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            outline: 1px white solid;
+            outline-offset: -1px;
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Logo Bar */
+        .logo-bar {
+            width: 100%;
+            min-width: 690px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: linear-gradient(0deg, #231F20 0%, #231F20 100%), linear-gradient(0deg, rgba(35, 31, 32, 0) 0%, rgba(35, 31, 32, 0.80) 100%);
+            backdrop-filter: blur(1.50px);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .logo-bar-content {
+            width: 100%;
+            max-width: 1128px;
+            min-width: 690px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .language-switch {
+            display: flex;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .lang-btn {
+            width: 39px;
+            height: 39px;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.90);
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            color: #231F20;
+        }
+        
+        .lang-btn.inactive {
+            background: transparent;
+            color: white;
+        }
+        
+        .logo-container {
+            width: 308px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .phone-contact {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        
+        .phone-btn {
+            padding: 10px;
+            border-radius: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            white-space: nowrap;
+        }
+        
+        .phone-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .phone-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-menu {
+            width: 100%;
+            max-width: 1128px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        /* Banner Section */
+        .banner-section {
+            width: 100%;
+            height: 1024px;
+            min-width: 1px;
+            max-height: 1024px;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 180px;
+        }
+        
+        .banner-image {
+            flex: 1 1 0;
+            height: 1024px;
+            padding: 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 10px;
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Content Sections */
+        .content-wrapper {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .section-frame {
+            width: 100%;
+            max-width: 1126px;
+            min-width: 350px;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 25px;
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+        
+        .section-image {
+            flex: 1 1 0;
+            height: 414px;
+            min-width: 350px;
+            padding: 10px;
+        }
+        
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .section-content {
+            flex: 1 1 0;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .section-content.right {
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        .section-title {
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+            word-wrap: break-word;
+        }
+        
+        .section-text {
+            align-self: stretch;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        
+        .btn-outline {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            outline: 1px #B17A53 solid;
+            outline-offset: -1px;
+            background: transparent;
+            color: #B17A53;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            min-width: 39px;
+            padding: 10px;
+            background: #B17A53;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary .arrow-icon,
+        .btn-outline .arrow-icon {
+            margin-left: 0;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            width: 100%;
+            min-width: 390px;
+            padding-top: 201px;
+            padding-bottom: 201px;
+            padding-left: 14px;
+            padding-right: 14px;
+            background: linear-gradient(0deg, rgba(35, 31, 32, 0.50) 0%, rgba(35, 31, 32, 0.50) 100%);
+            background-image: url('images/benefits-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 105px;
+        }
+        
+        .benefits-title {
+            width: 100%;
+            max-width: 1126px;
+            min-width: 350px;
+            text-align: center;
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .benefits-grid {
+            width: 100%;
+            max-width: 1126px;
+            min-width: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .benefit-card {
+            width: 263px;
+            height: 240px;
+            max-width: 265px;
+            min-width: 175px;
+            padding: 22px 44px;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .benefit-icon {
+            width: 54px;
+            height: 54px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Benefit Icons - SVG icons matching Figma */
+        .icon-wifi {
+            width: 46px;
+            height: 32px;
+            left: 4px;
+            top: 11px;
+            position: absolute;
+        }
+        
+        .icon-pool {
+            width: 46px;
+            height: 34px;
+            left: 4px;
+            top: 10px;
+            position: absolute;
+        }
+        
+        .icon-bicycle {
+            width: 46px;
+            height: 27px;
+            left: 4px;
+            top: 14px;
+            position: absolute;
+        }
+        
+        .icon-bbq {
+            width: 46px;
+            height: 41px;
+            left: 4px;
+            top: 6.5px;
+            position: absolute;
+            transform: rotate(-180deg);
+            transform-origin: center;
+        }
+        
+        .benefit-content {
+            height: 150px;
+            min-width: 175px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .benefit-name {
+            min-width: 175px;
+            text-align: center;
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .benefit-desc {
+            align-self: stretch;
+            text-align: center;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Room Categories Section */
+        .rooms-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .section-header {
+            width: 100%;
+            height: 141px;
+            max-width: 1126px;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .section-header-title {
+            align-self: stretch;
+            min-width: 350px;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .rooms-carousel-container {
+            width: 100%;
+            height: 676px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rooms-carousel {
+            padding-left: 156px;
+            padding-right: 156px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        
+        .room-card {
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            flex-shrink: 0;
+        }
+        
+        .room-image {
+            width: 360px;
+            height: 357px;
+            padding: 10px;
+        }
+        
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .room-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+            flex: 1 1 0;
+        }
+        
+        .room-name {
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .room-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .room-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .room-detail-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        /* People Icon - SVG */
+        .icon-people {
+            width: 18px;
+            height: 14px;
+            left: 3px;
+            top: 5px;
+            position: absolute;
+        }
+        
+        /* Area Icon - SVG */
+        .icon-area {
+            width: 15.99px;
+            height: 16.57px;
+            left: 4px;
+            top: 4px;
+            position: absolute;
+        }
+        
+        /* Room Icon - SVG */
+        .icon-room {
+            width: 18px;
+            height: 15px;
+            left: 3px;
+            top: 5px;
+            position: absolute;
+        }
+        
+        /* Bed Icon - SVG */
+        .icon-bed {
+            width: 23px;
+            height: 15px;
+            left: 0px;
+            top: 5px;
+            position: absolute;
+        }
+        
+        /* Arrow Icon in buttons - Using SVG file */
+        .arrow-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .arrow-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .arrow-icon.white img {
+            filter: brightness(0) invert(1);
+        }
+        
+        .arrow-icon.brown img {
+            filter: brightness(0) saturate(100%) invert(44%) sepia(23%) saturate(1200%) hue-rotate(345deg) brightness(95%) contrast(90%);
+        }
+        
+        /* Carousel arrow */
+        .carousel-arrow {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-arrow img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .carousel-btn.white .carousel-arrow img {
+            filter: brightness(0) saturate(100%) invert(44%) sepia(23%) saturate(1200%) hue-rotate(345deg) brightness(95%) contrast(90%);
+        }
+        
+        .room-detail-text {
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .room-actions {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .carousel-btn {
+            min-width: 39px;
+            padding: 8px;
+            background: #B17A53;
+            border-radius: 200px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: #9a6845;
+        }
+        
+        .carousel-btn.prev {
+            transform: rotate(-180deg);
+        }
+        
+        .carousel-btn.white {
+            background: white;
+        }
+        
+        .carousel-btn.white:hover {
+            background: #f0f0f0;
+        }
+        
+        /* Areas Section */
+        .areas-section {
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            padding-left: 156px;
+            padding-right: 156px;
+            background: #231F20;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .areas-title {
+            width: 100%;
+            max-width: 1126px;
+            min-width: 350px;
+            text-align: center;
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .areas-grid {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .area-card {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .area-image {
+            width: 100%;
+            height: 480px;
+            padding: 10px;
+        }
+        
+        .area-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .area-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .area-name {
+            min-width: 200px;
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .btn-white-outline {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            outline: 1px white solid;
+            outline-offset: -1px;
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Events Section */
+        .events-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .events-carousel-container {
+            width: 100%;
+            height: 519px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .events-carousel {
+            width: 2376px;
+            min-width: 390px;
+            padding-left: 156px;
+            padding-right: 156px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        
+        .event-card {
+            flex: 1 1 0;
+            max-width: 456px;
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 295.20px;
+            max-width: 456px;
+            min-width: 360px;
+            max-height: 342px;
+            min-height: 270px;
+            padding: 10px;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .event-name {
+            min-width: 350px;
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        /* Tours Section */
+        .tours-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .tours-carousel-container {
+            width: 100%;
+            height: 642px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tours-carousel {
+            padding-left: 156px;
+            padding-right: 156px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        
+        .tour-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        
+        .tour-image {
+            width: 350px;
+            height: 467px;
+            padding: 10px;
+        }
+        
+        .tour-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .tour-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .tour-name {
+            min-width: 200px;
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        /* Booking CTA */
+        .booking-cta {
+            width: 100%;
+            max-width: 1126px;
+            min-width: 350px;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .booking-cta-title {
+            align-self: stretch;
+            min-width: 350px;
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        /* Footer */
+        .footer {
+            width: 100%;
+            min-width: 1060px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 155px;
+            padding-right: 155px;
+            background: #B17A53;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 100px;
+        }
+        
+        .footer-news {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-news-title {
+            min-width: 350px;
+            text-align: center;
+            color: white;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .footer-news-carousel {
+            width: 1130px;
+            height: 683px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-news-items {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        
+        .footer-news-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        
+        .footer-news-image {
+            width: 350px;
+            height: 467px;
+            padding: 10px;
+        }
+        
+        .footer-news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .footer-news-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .footer-news-category {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .footer-news-title-small {
+            min-width: 200px;
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .footer-logo {
+            width: 308px;
+            height: 100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .footer-links {
+            width: 100%;
+            max-width: 1128px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            min-width: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .footer-column-title {
+            color: white;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+        }
+        
+        .footer-link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .footer-link {
+            padding: 5px 10px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+        
+        .footer-copyright {
+            color: white;
+            font-size: 16px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .booking-bar,
+            .logo-bar {
+                min-width: 100%;
+            }
+            
+            .section-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+            
+            .benefits-section {
+                padding: 100px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-container">
+        <!-- Top Booking Bar -->
+        <div class="booking-bar">
+            <div class="booking-content">
+                <p class="booking-text">ĐẶT LỊCH VỚI GIÁ TỐT NHẤT</p>
+                <div class="booking-controls">
+                    <div class="date-input-wrapper">
+                        <div class="date-input-label">Text box 10</div>
+                        <div class="date-input">
+                            <span style="color: rgba(35, 31, 32, 0.50); font-size: 14px; font-family: 'UTM Avo', Arial, sans-serif;">mm/dd/yyyy</span>
+                            <div class="date-input-icon">
+                                <img src="images/calendar 18 primary.svg" alt="Calendar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date-input-wrapper">
+                        <div class="date-input-label">Text box 10</div>
+                        <div class="date-input">
+                            <span style="color: rgba(35, 31, 32, 0.50); font-size: 14px; font-family: 'UTM Avo', Arial, sans-serif;">mm/dd/yyyy</span>
+                            <div class="date-input-icon">
+                                <img src="images/calendar 18 primary.svg" alt="Calendar">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="booking-button">
+                        BUTTON TEXT
+                        <div class="arrow-icon white">
+                            <img src="images/Arrow 24 white.svg" alt="Arrow">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logo Bar -->
+        <div class="logo-bar">
+            <div class="logo-bar-content">
+                <div class="language-switch">
+                    <button class="lang-btn active">VI</button>
+                    <button class="lang-btn inactive">EN</button>
+                </div>
+                <div class="logo-container">
+                    <img src="images/Group 1.svg" alt="The Wandering Rose Logo">
+                </div>
+                <div class="phone-contact">
+                    <button class="phone-btn">
+                        <div class="phone-icon">
+                            <img src="images/Phone 18 white.svg" alt="Phone">
+                        </div>
+                        <div style="color: white; font-size: 14px; font-family: 'UTM Avo', Arial, sans-serif; font-weight: 400; letter-spacing: 1.68px;">092 981 6699</div>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.php" class="nav-link">TRANG CHỦ</a>
+                <a href="about.html" class="nav-link">VỀ CHÚNG TÔI</a>
+                <a href="rooms.html" class="nav-link">HẠNG PHÒNG</a>
+                <a href="#" class="nav-link">DỊCH VỤ SỰ KIỆN</a>
+                <a href="#" class="nav-link">TRẢI NGHIỆM & TOUR</a>
+                <a href="#" class="nav-link">LIÊN HỆ</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <div class="page-container">
+            <!-- Banner Video Section -->
+            <div class="banner-section">
+                <div class="banner-image"></div>
+            </div>
+            
+            <!-- Location & Space Section -->
+            <div class="content-wrapper">
+                <div class="section-frame">
+                    <img src="images/location-space.jpg" alt="Vị trí & Không gian" class="section-image">
+                    <div class="section-content">
+                        <div class="section-title">Vị trí & Không gian</div>
+                        <div class="section-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</div>
+                        <button class="btn-outline">XEM THÊM<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                    </div>
+                </div>
+                
+                <!-- Harmony with Nature Section -->
+                <div class="section-frame">
+                    <div class="section-content right">
+                        <div class="section-title">Hoà mình vào<br/>thiên nhiên</div>
+                        <div class="section-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</div>
+                        <button class="btn-outline">XEM THÊM<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                    </div>
+                    <img src="images/nature-harmony.jpg" alt="Hoà mình vào thiên nhiên" class="section-image">
+                </div>
+            </div>
+            
+            <!-- Benefits Section -->
+            <div class="benefits-section">
+                <div class="benefits-title">Quyền lợi khi đặt phòng</div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon-wifi" viewBox="0 0 46 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 0C10.85 0 0 7.16 0 16c0 2.21 1.79 4 4 4s4-1.79 4-4c0-4.42 7.16-8 16-8s16 3.58 16 8c0 2.21 1.79 4 4 4s4-1.79 4-4c0-8.84-10.85-16-23-16z" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                                <path d="M23 8c-4.42 0-8 2.69-8 6 0 2.21 1.79 4 4 4s4-1.79 4-4c0-1.1.9-2 2-2s2 .9 2 2c0 2.21 1.79 4 4 4s4-1.79 4-4c0-3.31-3.58-6-8-6z" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                                <circle cx="23" cy="18" r="2" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-name">Wifi 24/7</div>
+                            <div class="benefit-desc">Body text 3 dòng</div>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon-pool" viewBox="0 0 46 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="10" width="42" height="24" rx="2" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                                <path d="M8 14h30M8 18h30M8 22h30M8 26h30" stroke="#B17A53" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-name">Hồ bơi</div>
+                            <div class="benefit-desc">Body text 3 dòng</div>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon-bicycle" viewBox="0 0 46 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="20" r="7" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                                <circle cx="36" cy="20" r="7" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                                <path d="M17 20h12M23 5v15M10 20l13-15M36 20l-13-15" stroke="#B17A53" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-name">Xe đạp miễn phí</div>
+                            <div class="benefit-desc">Body text 3 dòng</div>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon-bbq" viewBox="0 0 46 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="2" width="30" height="37" rx="2" stroke="#B17A53" stroke-width="2.5" fill="none"/>
+                                <path d="M12 8h22M12 14h22M12 20h22M12 26h22M12 32h22" stroke="#B17A53" stroke-width="2.5"/>
+                                <path d="M18 2v4M28 2v4" stroke="#B17A53" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <div class="benefit-name">BBQ ngoài trời</div>
+                            <div class="benefit-desc">Body text 3 dòng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Room Categories Section -->
+            <div class="rooms-section">
+                <div class="section-header">
+                    <div class="section-header-title">Các hạng phòng</div>
+                    <button class="btn-primary">XEM CHI TIẾT<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                </div>
+                <div class="rooms-carousel-container">
+                    <div class="rooms-carousel">
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/forest-room.jpg" alt="Forest room"></div>
+                            <div class="room-info">
+                                <div class="room-name">Forest room</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">16</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">48</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">08</div>
+                                        <div class="room-detail-text">đệm</div>
+                                        <div class="room-detail-text">1m6 x 1m8</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/deluxe-room.jpg" alt="Deluxe room"></div>
+                            <div class="room-info">
+                                <div class="room-name">Deluxe room</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">18</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">01</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">01</div>
+                                        <div class="room-detail-text">giường</div>
+                                        <div class="room-detail-text">1m8 x 2m</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/family-room.jpg" alt="Family Room"></div>
+                            <div class="room-info">
+                                <div class="room-name">Family Room</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">04</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">25</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">04</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">giường</div>
+                                        <div class="room-detail-text">1m6 x 2m</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/pink-room.jpg" alt="Pink Rose house"></div>
+                            <div class="room-info">
+                                <div class="room-name">Pink Rose house</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">04</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">30</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">01</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">giường</div>
+                                        <div class="room-detail-text">1m8 x 2m</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/villa.jpg" alt="White Rose house"></div>
+                            <div class="room-info">
+                                <div class="room-name">White Rose house</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">24</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">01</div>
+                                        <div class="room-detail-text">giường</div>
+                                        <div class="room-detail-text">1m8 x 2m</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/villa.jpg" alt="Red Rose house"></div>
+                            <div class="room-info">
+                                <div class="room-name">Red Rose house</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">13</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">01</div>
+                                        <div class="room-detail-text">giường</div>
+                                        <div class="room-detail-text">1m6 x 2m</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-card">
+                            <div class="room-image"><img src="images/villa.jpg" alt="The Wandering Rose villa"></div>
+                            <div class="room-info">
+                                <div class="room-name">The Wandering Rose villa</div>
+                                <div class="room-details">
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-people" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="14" cy="4" r="3" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M0 13c0-2.21 1.79-4 4-4s4 1.79 4 4M10 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">04</div>
+                                        <div class="room-detail-text">người lớn</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-area" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6l7-5 7 5v10H1V6z" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M8 1v15M1 6h14" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">tầng 1: 100 m<sup>2</sup> tầng 2: 35</div>
+                                        <div class="room-detail-text">m<sup>2</sup></div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-room" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="11" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 7h16M1 11h16" stroke="#B17A53" stroke-width="1.5"/>
+                                                <path d="M5 3V1M13 3V1" stroke="#B17A53" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">03</div>
+                                        <div class="room-detail-text">phòng</div>
+                                    </div>
+                                    <div class="room-detail-item">
+                                        <div class="room-detail-icon">
+                                            <svg class="icon-bed" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="7" width="21" height="7" rx="1" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <path d="M1 10h21M6 7V4M17 7V4" stroke="#B17A53" stroke-width="1.5"/>
+                                                <circle cx="5" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                                <circle cx="18" cy="2" r="1.5" stroke="#B17A53" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="room-detail-text">02</div>
+                                        <div class="room-detail-text">giường</div>
+                                        <div class="room-detail-text">1m8 x 2m</div>
+                                    </div>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn-primary">ĐẶT PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                    <button class="btn-outline">XEM CHI TIẾT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) invert(1);"></div></button>
+                    <button class="carousel-btn next"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) invert(1);"></div></button>
+                </div>
+            </div>
+            
+            <!-- Areas Section -->
+            <div class="areas-section">
+                <div class="areas-title">Các khu tại The Wandering Rose</div>
+                    <button class="btn-white-outline" style="background: rgba(255, 255, 255, 0.90); color: #B17A53;">XEM CHI TIẾT<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <div class="area-image"><img src="images/rose-house.jpg" alt="KHU ROSE HOUSE"></div>
+                        <div class="area-info">
+                            <div class="area-name">KHU ROSE HOUSE</div>
+                            <button class="btn-white-outline">TÌM HIỂU THÊM<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image"><img src="images/wooden-house.jpg" alt="KHU WOODEN HOUSE"></div>
+                        <div class="area-info">
+                            <div class="area-name">KHU WOODEN HOUSE</div>
+                            <button class="btn-white-outline">TÌM HIỂU THÊM<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                        </div>
+                    </div>
+                    <div class="area-card">
+                        <div class="area-image"><img src="images/villa.jpg" alt="KHU VILLA"></div>
+                        <div class="area-info">
+                            <div class="area-name">KHU VILLA</div>
+                            <button class="btn-white-outline">TÌM HIỂU THÊM<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Events Section -->
+            <div class="events-section">
+                <div class="section-header">
+                    <div class="section-header-title">Dịch vụ sự kiện</div>
+                    <button class="btn-primary">XEM CHI TIẾT<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                </div>
+                <div class="events-carousel-container">
+                    <div class="events-carousel">
+                        <div class="event-card">
+                            <div class="event-image"><img src="images/birthday-event.jpg" alt="Tổ chức sinh nhật"></div>
+                            <div class="event-info">
+                                <div class="event-name">Tổ chức sinh nhật</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-image"><img src="images/teambuilding.jpg" alt="Teambuilding"></div>
+                            <div class="event-info">
+                                <div class="event-name">Teambuilding</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-image"><img src="images/wedding.jpg" alt="Tiệc cưới nhỏ"></div>
+                            <div class="event-info">
+                                <div class="event-name">Tiệc cưới nhỏ</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-image"><img src="images/birthday-event.jpg" alt="Tiệc kỷ niệm"></div>
+                            <div class="event-info">
+                                <div class="event-name">Tiệc kỷ niệm</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-image"><img src="images/birthday-event.jpg" alt="Đặt sự kiện riêng"></div>
+                            <div class="event-info">
+                                <div class="event-name">Đặt sự kiện riêng</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) invert(1);"></div></button>
+                    <button class="carousel-btn next"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) invert(1);"></div></button>
+                </div>
+            </div>
+            
+            <!-- Tours Section -->
+            <div class="tours-section">
+                <div class="section-header">
+                    <div class="section-header-title">Trải nghiệm và tour</div>
+                    <button class="btn-primary">XEM CHI TIẾT<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                </div>
+                <div class="tours-carousel-container">
+                    <div class="tours-carousel">
+                        <div class="tour-card">
+                            <div class="tour-image"><img src="images/tour-bavi.jpg" alt="Tour khám phá Vườn Quốc gia Ba Vì"></div>
+                            <div class="tour-info">
+                                <div class="tour-name">Tour khám phá Vườn Quốc gia Ba Vì</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="tour-card">
+                            <div class="tour-image"><img src="images/tour-aovua.jpg" alt="Tour Ao Vua"></div>
+                            <div class="tour-info">
+                                <div class="tour-name">Tour Ao Vua</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="tour-card">
+                            <div class="tour-image"><img src="images/tour-khoangxanh.jpg" alt="Khoang Xanh – Suối Tiên"></div>
+                            <div class="tour-info">
+                                <div class="tour-name">Khoang Xanh – Suối Tiên</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                        <div class="tour-card">
+                            <div class="tour-image"><img src="images/tour-experiences.jpg" alt="Các trải nghiệm bản địa"></div>
+                            <div class="tour-info">
+                                <div class="tour-name">Các trải nghiệm bản địa</div>
+                                <button class="btn-outline">ĐẶT LỊCH<div class="arrow-icon brown"><img src="images/Arrow 18.svg" alt=""></div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) invert(1);"></div></button>
+                    <button class="carousel-btn next"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) invert(1);"></div></button>
+                </div>
+            </div>
+            
+            <!-- Booking CTA -->
+            <div class="booking-cta">
+                <div class="booking-cta-title">Đặt lịch với The Wandering Rose</div>
+                <button class="btn-primary">BOOK PHÒNG<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <div class="footer-news">
+                    <div class="footer-news-title">Tin tức và sự kiện</div>
+                    <div class="footer-news-carousel">
+                        <div class="footer-news-items">
+                            <div class="footer-news-card">
+                                <div class="footer-news-image"><img src="images/news-1.jpg" alt="News"></div>
+                                <div class="footer-news-info">
+                                    <div class="footer-news-category">Sự kiện âm nhạc</div>
+                                    <div class="footer-news-title-small">Tên tin tức</div>
+                                    <button class="btn-white-outline">TÌM HIỂU<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                </div>
+                            </div>
+                            <div class="footer-news-card">
+                                <div class="footer-news-image"><img src="images/news-2.jpg" alt="News"></div>
+                                <div class="footer-news-info">
+                                    <div class="footer-news-category">Tên loại tin tức</div>
+                                    <div class="footer-news-title-small">Tên tin tức</div>
+                                    <button class="btn-white-outline">TÌM HIỂU<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                </div>
+                            </div>
+                            <div class="footer-news-card">
+                                <div class="footer-news-image"><img src="images/news-3.jpg" alt="News"></div>
+                                <div class="footer-news-info">
+                                    <div class="footer-news-category">Tên loại tin tức</div>
+                                    <div class="footer-news-title-small">Tên tin tức</div>
+                                    <button class="btn-white-outline">TÌM HIỂU<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                </div>
+                            </div>
+                            <div class="footer-news-card">
+                                <div class="footer-news-image"><img src="images/news-1.jpg" alt="News"></div>
+                                <div class="footer-news-info">
+                                    <div class="footer-news-category">Tên loại tin tức</div>
+                                    <div class="footer-news-title-small">Tên tin tức</div>
+                                    <button class="btn-white-outline">TÌM HIỂU<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev white"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) saturate(100%) invert(44%) sepia(23%) saturate(1200%) hue-rotate(345deg) brightness(95%) contrast(90%);"></div></button>
+                        <button class="carousel-btn next white"><div class="carousel-arrow"><img src="images/Arrow 18.svg" alt="" style="filter: brightness(0) saturate(100%) invert(44%) sepia(23%) saturate(1200%) hue-rotate(345deg) brightness(95%) contrast(90%);"></div></button>
+                    </div>
+                </div>
+                
+                <div class="footer-logo">
+                    <img src="images/Group 1.svg" alt="The Wandering Rose Logo">
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <div class="footer-column-title">TRANG CHỦ</div>
+                        <div class="footer-link-list">
+                            <a href="#" class="footer-link">VỀ CHÚNG TÔI</a>
+                            <a href="#" class="footer-link">SỰ KIỆN ÂM NHẠC</a>
+                            <a href="#" class="footer-link">GALLERY HÌNH ẢNH & VIDEO</a>
+                            <a href="#" class="footer-link">TIN TỨC</a>
+                            <a href="#" class="footer-link">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">HẠNG PHÒNG</div>
+                        <div class="footer-link-list">
+                            <a href="#" class="footer-link">KHU WOODEN HOUSE</a>
+                            <a href="#" class="footer-link">FOREST ROOM</a>
+                            <a href="#" class="footer-link">DELUXE ROOM</a>
+                            <a href="#" class="footer-link">FAMILY ROOM</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">HẠNG PHÒNG</div>
+                        <div class="footer-link-list">
+                            <a href="#" class="footer-link">KHU ROSE HOUSE</a>
+                            <a href="#" class="footer-link">PINK ROSE HOUSE</a>
+                            <a href="#" class="footer-link">WHITE ROSE HOUSE</a>
+                            <a href="#" class="footer-link">RED ROSE HOUSE</a>
+                            <a href="#" class="footer-link">THE WANDERING ROSE VILLA</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">TRẢI NGHIỆM &TOUR</div>
+                        <div class="footer-link-list">
+                            <a href="#" class="footer-link">TOUR VƯỜN QUỐC GIA BA VÌ</a>
+                            <a href="#" class="footer-link">TOUR AO VUA</a>
+                            <a href="#" class="footer-link">KHOANG XANH - SUỐI TIÊN</a>
+                            <a href="#" class="footer-link">CÁC TRẢI NGHIỆM BẢN ĐỊA</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">DỊCH VỤ SỰ KIỆN</div>
+                        <div class="footer-link-list">
+                            <a href="#" class="footer-link">TỔ CHỨC SINH NHẬT</a>
+                            <a href="#" class="footer-link">TEAMBUILDING</a>
+                            <a href="#" class="footer-link">TIỆC CƯỚI NHỎ</a>
+                            <a href="#" class="footer-link">TIỆC KỶ NIỆM</a>
+                            <a href="#" class="footer-link">ĐĂNG KÝ TỔ CHỨC SỰ KIỆN</a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title">LIÊN HỆ</div>
+                        <div class="footer-link-list">
+                            <div class="footer-link">092 981 6699</div>
+                            <div class="footer-link">booking@thewanderingrosebavi.com</div>
+                            <div class="footer-link">Thôn Mít Mái, Ba Vì, Hà Nội</div>
+                        </div>
+                        <button class="btn-white-outline" style="margin-top: 10px;">GỬI LIÊN HỆ<div class="arrow-icon white"><img src="images/Arrow 18.svg" alt=""></div></button>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-copyright">© Copyright 2025 The Wandering Rose</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <img src="images/Youtube.svg" alt="YouTube" style="width: 24px; height: 24px;">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <img src="images/Instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Carousel functionality
+        function initCarousel(containerSelector, prevBtnSelector, nextBtnSelector) {
+            const container = document.querySelector(containerSelector);
+            const prevBtn = document.querySelector(prevBtnSelector);
+            const nextBtn = document.querySelector(nextBtnSelector);
+            
+            if (container && prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: -400, behavior: 'smooth' });
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: 400, behavior: 'smooth' });
+                });
+            }
+        }
+        
+        // Initialize carousels
+        initCarousel('.rooms-carousel', '.rooms-section .carousel-btn.prev', '.rooms-section .carousel-btn.next');
+        initCarousel('.events-carousel', '.events-section .carousel-btn.prev', '.events-section .carousel-btn.next');
+        initCarousel('.tours-carousel', '.tours-section .carousel-btn.prev', '.tours-section .carousel-btn.next');
+        initCarousel('.footer-news-items', '.footer-news .carousel-btn.prev', '.footer-news .carousel-btn.next');
+    </script>
+</body>
+</html>

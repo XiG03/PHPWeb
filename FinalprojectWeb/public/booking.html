@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wandering Rose Ba Vì - Đặt phòng</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Allura&family=Pinyon+Script&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wandering-rose': {
+                            'brown': '#B17A53',
+                            'brown-dark': '#7A5A3F',
+                            'brown-light': '#9E8877',
+                            'beige': '#FFE8D0',
+                            'text-dark': '#231F20',
+                            'dark': '#1a1a1a',
+                            'tan': '#B7907B',
+                        },
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['UTM Avo', 'Arial', 'sans-serif'],
+                        'script': ['Allura', 'Pinyon Script', 'cursive'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* SVN-Bon Voyage Font Face */
+        @font-face {
+            font-family: 'SVN-Bon Voyage';
+            src: url('fonts/SVN-Bon Voyage.ttf') format('truetype'),
+                 url('fonts/SVN-Bon Voyage.otf') format('opentype'),
+                 url('fonts/svn-bon-voyage.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* UTM Avo Font Face */
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Regular.ttf') format('truetype'),
+                 url('fonts/UTM Avo Regular.otf') format('opentype'),
+                 url('fonts/utm-avo-regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'UTM Avo';
+            src: url('fonts/UTM Avo Bold.ttf') format('truetype'),
+                 url('fonts/UTM Avo Bold.otf') format('opentype'),
+                 url('fonts/utm-avo-bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body { 
+            font-family: 'UTM Avo', 'Arial', sans-serif; 
+            background: linear-gradient(0deg, rgba(255, 232, 208, 0.20) 0%, rgba(255, 232, 208, 0.20) 100%), #FFF;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: 'SVN-Bon Voyage', 'Playfair Display', serif; 
+        }
+        
+        /* Header */
+        .booking-header {
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(255, 250, 246, 0.60);
+            backdrop-filter: blur(2px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 40px 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-btn {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #B17A53;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+            text-decoration: none;
+        }
+        
+        .logo-container {
+            width: 354px;
+            height: 115px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .currency-selector {
+            display: flex;
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .currency-text {
+            height: 39px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            align-items: center;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .currency-dropdown {
+            height: 39px;
+            min-width: 39px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .flag-icon {
+            width: 20px;
+            height: 13px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .flag-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        
+        .dropdown-arrow {
+            width: 18px;
+            height: 18px;
+            position: relative;
+        }
+        
+        /* Search Criteria */
+        .search-criteria {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 76px;
+            flex-wrap: wrap;
+        }
+        
+        .date-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .date-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .date-label {
+            color: #231F20;
+            font-size: 24px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 700;
+        }
+        
+        .nights-badge {
+            padding: 5px 10px;
+            background: #B17A53;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .dates-display {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .date-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .date-number {
+            color: #231F20;
+            font-size: 46px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .date-month-year {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 69px;
+        }
+        
+        .date-month, .date-year {
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .booking-info {
+            width: 530px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: flex-end;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .info-label {
+            height: 35px;
+            display: flex;
+            align-items: center;
+            color: #231F20;
+            font-size: 24px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 700;
+        }
+        
+        .info-value {
+            color: #231F20;
+            font-size: 46px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        .search-btn {
+            min-width: 39px;
+            padding: 10px;
+            background: #B17A53;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 100px 156px;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+        }
+        
+        /* Room Listing */
+        .rooms-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .room-card {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+        
+        .room-image-section {
+            flex: 1 1 0;
+            max-width: 500px;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .room-carousel-wrapper {
+            width: 100%;
+            height: 375px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .room-carousel-track {
+            width: 2000px;
+            height: 100%;
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        
+        .room-carousel-image {
+            width: 500px;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .carousel-btn {
+            min-width: 39px;
+            padding: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-btn.prev {
+            transform: rotate(180deg);
+        }
+        
+        .carousel-arrow {
+            width: 48.17px;
+            height: 18.67px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-arrow img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .room-info-section {
+            flex: 1 1 0;
+            min-width: 350px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+        
+        .room-details {
+            height: 190px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .room-title {
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            min-width: 200px;
+        }
+        
+        .room-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .spec-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+        
+        .spec-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .spec-text {
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .room-pricing {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+        }
+        
+        .price-display {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: flex-end;
+        }
+        
+        .price-amount {
+            color: #B17A53;
+            font-size: 24px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .price-unit {
+            color: #B17A53;
+            font-size: 24px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .price-per-night {
+            color: #B17A53;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .availability {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .availability-text {
+            color: rgba(35, 31, 32, 0.60);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .quantity-selector {
+            width: 150px;
+            min-width: 100px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.90);
+            box-shadow: 0px 0px 4px rgba(35, 31, 32, 0.50) inset;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .qty-btn {
+            width: 18px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0;
+        }
+        
+        .qty-btn:hover {
+            color: #231F20;
+        }
+        
+        .qty-minus {
+            font-size: 18px;
+        }
+        
+        .qty-plus {
+            position: relative;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .qty-plus::before {
+            content: '';
+            width: 10.80px;
+            height: 10.80px;
+            position: absolute;
+            left: 3.60px;
+            top: 3.60px;
+            border: 1px solid rgba(35, 31, 32, 0.50);
+        }
+        
+        .qty-plus::after {
+            content: '+';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(35, 31, 32, 0.50);
+        }
+        
+        .qty-value {
+            color: rgba(35, 31, 32, 0.50);
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+        }
+        
+        .room-actions {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .btn-select {
+            min-width: 39px;
+            padding: 10px;
+            border-radius: 5px;
+            outline: 1px #B17A53 solid;
+            outline-offset: -1px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #B17A53;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+        }
+        
+        .btn-book {
+            min-width: 39px;
+            padding: 10px;
+            background: #B17A53;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 14px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 1.68px;
+        }
+        
+        .arrow-right {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .arrow-right img {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* Amenities and Policy Section */
+        .info-sections {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .info-section {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #B17A53;
+            font-size: 64px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            line-height: 82px;
+        }
+        
+        .section-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .list-item {
+            width: 100%;
+            min-width: 175px;
+            padding-bottom: 10px;
+            border-bottom: 1px #B17A53 solid;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .list-item-title {
+            text-align: center;
+            color: #B17A53;
+            font-size: 32px;
+            font-family: 'SVN-Bon Voyage', serif;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+        
+        .list-item-desc {
+            text-align: center;
+            color: #B17A53;
+            font-size: 18px;
+            font-family: 'UTM Avo', Arial, sans-serif;
+            line-height: 1.5;
+        }
+        
+        .list-item-desc.left-align {
+            text-align: left;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 200px 20px 50px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-criteria {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .room-card {
+                flex-direction: column;
+            }
+            
+            .info-sections {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="booking-header">
+        <div class="header-content">
+            <a href="rooms.html" class="back-btn">
+                <img src="images/Arrow 18.svg" alt="back" style="width: 18px; height: 18px; transform: rotate(180deg);">
+                <span>TRỞ VỀ</span>
+            </a>
+            <div class="logo-container">
+                <!-- Vui lòng thay thế "Group 1.svg" bằng tên file logo màu be của bạn -->
+                <img src="images/Group 1.svg" alt="THE WANDERING ROSE - Ba Vì">
+            </div>
+            <div class="currency-selector">
+                <div class="currency-text">VNĐ</div>
+                <div class="currency-dropdown">
+                    <div class="flag-icon">
+                        <img src="images/044f0f73c33eb3af88a609b278b1c36e9fad0528.png" alt="Vietnam flag" style="width: 20px; height: 13px; object-fit: cover; border-radius: 2px;">
+                    </div>
+                    <div class="dropdown-arrow">
+                        <img src="images/Arrow down 18 black.svg" alt="dropdown" style="width: 18px; height: 18px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-criteria">
+            <div class="date-section">
+                <div class="date-header">
+                    <div class="date-label">NGÀY</div>
+                    <div class="nights-badge">10 Đêm</div>
+                </div>
+                <div class="dates-display">
+                    <div class="date-item">
+                        <div class="date-number">27</div>
+                        <div class="date-month-year">
+                            <div class="date-month">Tháng 9</div>
+                            <div class="date-year">2025</div>
+                        </div>
+                    </div>
+                    <div class="date-item">
+                        <div class="date-number">6</div>
+                        <div class="date-month-year">
+                            <div class="date-month">Tháng 10</div>
+                            <div class="date-year">2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-info">
+                <div class="info-row">
+                    <div class="info-item" style="width: 93px;">
+                        <div class="info-label">PHÒNG</div>
+                        <div class="info-value">1</div>
+                    </div>
+                    <div class="info-item" style="width: 142px;">
+                        <div class="info-label">NGƯỜI LỚN</div>
+                        <div class="info-value">2</div>
+                    </div>
+                    <div class="info-item" style="width: 83px;">
+                        <div class="info-label">TRẺ EM</div>
+                        <div class="info-value">0</div>
+                    </div>
+                    <div style="width: 32px; height: 46px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/Arrow 18.svg" alt="arrow" style="width: 18px; height: 18px; transform: rotate(90deg); filter: brightness(0);">
+                    </div>
+                </div>
+            </div>
+            <button class="search-btn">
+                <span>TÌM KIẾM</span>
+                <img src="images/Arrow 24 white.svg" alt="search" style="width: 18px; height: 18px;">
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Rooms Section -->
+        <div class="rooms-section">
+            <!-- Deluxe Room -->
+            <div class="room-card">
+                <div class="room-image-section">
+                    <div class="room-carousel-wrapper">
+                        <div class="room-carousel-track" id="carousel-deluxe">
+                            <img src="images/deluxe-room.jpg" alt="Deluxe room" class="room-carousel-image">
+                            <img src="images/deluxe-room.jpg" alt="Deluxe room" class="room-carousel-image">
+                            <img src="images/deluxe-room.jpg" alt="Deluxe room" class="room-carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev" onclick="moveCarousel('deluxe', -1)">
+                            <div class="carousel-arrow">
+                                <img src="images/Icon.svg" alt="prev">
+                            </div>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('deluxe', 1)">
+                            <div class="carousel-arrow">
+                                <img src="images/Icon.svg" alt="next">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-info-section">
+                    <div class="room-details">
+                        <div class="room-title">Deluxe room</div>
+                        <div class="room-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Tiêu chuẩn.svg" alt="People">
+                                </div>
+                                <div class="spec-text">00 người lớn</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Diện tích.svg" alt="Area">
+                                </div>
+                                <div class="spec-text">00 m<sup>2</sup></div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Phòng.svg" alt="Rooms">
+                                </div>
+                                <div class="spec-text">00 phòng ngủ</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/giường.svg" alt="Beds">
+                                </div>
+                                <div class="spec-text">00 giường 00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-pricing">
+                        <div class="price-display">
+                            <div class="price-amount">5.000.000</div>
+                            <div class="price-unit">đ</div>
+                            <div class="price-per-night">(1 đêm)</div>
+                        </div>
+                        <div class="availability">
+                            <div class="availability-text">Còn 02 phòng</div>
+                            <div class="quantity-selector">
+                                <button class="qty-btn qty-minus" onclick="changeQuantity('deluxe', -1)">−</button>
+                                <div class="qty-value" id="qty-deluxe">01</div>
+                                <button class="qty-btn qty-plus" onclick="changeQuantity('deluxe', 1)"></button>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn-select">CHỌN</button>
+                            <button class="btn-book">
+                                <span>ĐẶT NGAY</span>
+                                <div class="arrow-right">
+                                    <img src="images/Arrow 24 white.svg" alt="arrow">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Room -->
+            <div class="room-card">
+                <div class="room-image-section">
+                    <div class="room-carousel-wrapper">
+                        <div class="room-carousel-track" id="carousel-family">
+                            <img src="images/family-room.jpg" alt="Family room" class="room-carousel-image">
+                            <img src="images/family-room.jpg" alt="Family room" class="room-carousel-image">
+                            <img src="images/family-room.jpg" alt="Family room" class="room-carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev" onclick="moveCarousel('family', -1)">
+                            <div class="carousel-arrow">
+                                <img src="images/Icon.svg" alt="prev">
+                            </div>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('family', 1)">
+                            <div class="carousel-arrow">
+                                <img src="images/Icon.svg" alt="next">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-info-section">
+                    <div class="room-details">
+                        <div class="room-title">Family room</div>
+                        <div class="room-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Tiêu chuẩn.svg" alt="People">
+                                </div>
+                                <div class="spec-text">00 người lớn</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Diện tích.svg" alt="Area">
+                                </div>
+                                <div class="spec-text">00 m<sup>2</sup></div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Phòng.svg" alt="Rooms">
+                                </div>
+                                <div class="spec-text">00 phòng ngủ</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/giường.svg" alt="Beds">
+                                </div>
+                                <div class="spec-text">00 giường 00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-pricing">
+                        <div class="price-display">
+                            <div class="price-amount">5.000.000</div>
+                            <div class="price-unit">đ</div>
+                            <div class="price-per-night">(1 đêm)</div>
+                        </div>
+                        <div class="availability">
+                            <div class="availability-text">Còn 02 phòng</div>
+                            <div class="quantity-selector">
+                                <button class="qty-btn qty-minus" onclick="changeQuantity('family', -1)">−</button>
+                                <div class="qty-value" id="qty-family">01</div>
+                                <button class="qty-btn qty-plus" onclick="changeQuantity('family', 1)"></button>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn-select">CHỌN</button>
+                            <button class="btn-book">
+                                <span>ĐẶT NGAY</span>
+                                <div class="arrow-right">
+                                    <img src="images/Arrow 24 white.svg" alt="arrow">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Rose House -->
+            <div class="room-card">
+                <div class="room-image-section">
+                    <div class="room-carousel-wrapper">
+                        <div class="room-carousel-track" id="carousel-redrose">
+                            <img src="images/rose-house.jpg" alt="Red rose house" class="room-carousel-image">
+                            <img src="images/rose-house.jpg" alt="Red rose house" class="room-carousel-image">
+                            <img src="images/rose-house.jpg" alt="Red rose house" class="room-carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev" onclick="moveCarousel('redrose', -1)">
+                            <div class="carousel-arrow">
+                                <img src="images/Icon.svg" alt="prev">
+                            </div>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('redrose', 1)">
+                            <div class="carousel-arrow">
+                                <img src="images/Icon.svg" alt="next">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="room-info-section">
+                    <div class="room-details">
+                        <div class="room-title">Red rose house</div>
+                        <div class="room-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Tiêu chuẩn.svg" alt="People">
+                                </div>
+                                <div class="spec-text">00 người lớn</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Diện tích.svg" alt="Area">
+                                </div>
+                                <div class="spec-text">00 m<sup>2</sup></div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/Phòng.svg" alt="Rooms">
+                                </div>
+                                <div class="spec-text">00 phòng ngủ</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img src="images/giường.svg" alt="Beds">
+                                </div>
+                                <div class="spec-text">00 giường 00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-pricing">
+                        <div class="price-display">
+                            <div class="price-amount">5.000.000</div>
+                            <div class="price-unit">đ</div>
+                            <div class="price-per-night">(1 đêm)</div>
+                        </div>
+                        <div class="availability">
+                            <div class="availability-text">Còn 02 phòng</div>
+                            <div class="quantity-selector">
+                                <button class="qty-btn qty-minus" onclick="changeQuantity('redrose', -1)">−</button>
+                                <div class="qty-value" id="qty-redrose">01</div>
+                                <button class="qty-btn qty-plus" onclick="changeQuantity('redrose', 1)"></button>
+                            </div>
+                        </div>
+                        <div class="room-actions">
+                            <button class="btn-select">CHỌN</button>
+                            <button class="btn-book">
+                                <span>ĐẶT NGAY</span>
+                                <div class="arrow-right">
+                                    <img src="images/Arrow 24 white.svg" alt="arrow">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Amenities and Policy Section -->
+        <div class="info-sections">
+            <!-- Amenities Section -->
+            <div class="info-section">
+                <div class="section-title">Tiện nghi đã bao gồm</div>
+                <div class="section-list">
+                    <div class="list-item">
+                        <div class="list-item-title">Wi-Fi 24/7</div>
+                        <div class="list-item-desc">Luôn duy trì sự kết nối mượt mà trong suốt kỳ nghỉ.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Trà và cà phê miễn phí</div>
+                        <div class="list-item-desc">Được chuẩn bị sẵn để có thể thưởng thức bất cứ lúc nào.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Nệm pillow-top cao cấp</div>
+                        <div class="list-item-desc">Mang lại giấc ngủ êm ái và trọn vẹn.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Vòi sen mưa & sen cầm tay</div>
+                        <div class="list-item-desc">Mang lại giấc ngủ êm ái và trọn vẹn.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Điều hòa không khí</div>
+                        <div class="list-item-desc">Duy trì không gian thoáng mát, dễ chịu.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Ấm đun siêu tốc</div>
+                        <div class="list-item-desc">Phục vụ nhu cầu pha chế nhanh chóng và tiện lợi.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Smart TV & điều hòa</div>
+                        <div class="list-item-desc">Mang đến trải nghiệm giải trí đa dạng ngay tại phòng.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Tiện nghi phòng tắm cao cấp</div>
+                        <div class="list-item-desc">Bao gồm máy sấy tóc cùng sản phẩm chăm sóc tinh chọn.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Áo choàng tắm & dép đi trong phòng</div>
+                        <div class="list-item-desc">Tôn thêm sự thoải mái và tinh tế.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Phòng không hút thuốc</div>
+                        <div class="list-item-desc">Giữ không gian trong lành, thoải mái cho mọi khách.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Villa Policy Section -->
+            <div class="info-section">
+                <div class="section-title">Chính sách villa</div>
+                <div class="section-list">
+                    <div class="list-item">
+                        <div class="list-item-title">Thanh toán & huỷ đặt phòng</div>
+                        <div class="list-item-desc left-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Suspendisse iaculis urna nec odio tincidunt, sed aliquet libero imperdiet.<br>Fusce quis massa ac velit cursus dictum.<br>Ut placerat ipsum eu efficitur aliquam.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Thời gian nhận và trả phòng</div>
+                        <div class="list-item-desc left-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Suspendisse iaculis urna nec odio tincidunt, sed aliquet libero imperdiet.<br>Fusce quis massa ac velit cursus dictum.<br>Ut placerat ipsum eu efficitur aliquam.</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-title">Chính sách trẻ em</div>
+                        <div class="list-item-desc left-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Suspendisse iaculis urna nec odio tincidunt, sed aliquet libero imperdiet.<br>Fusce quis massa ac velit cursus dictum.<br>Ut placerat ipsum eu efficitur aliquam.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Carousel functionality
+        const carouselPositions = {
+            deluxe: 0,
+            family: 0,
+            redrose: 0
+        };
+
+        function moveCarousel(roomId, direction) {
+            const carousel = document.getElementById(`carousel-${roomId}`);
+            const totalImages = 3;
+            const imageWidth = 500;
+            
+            carouselPositions[roomId] += direction;
+            
+            if (carouselPositions[roomId] < 0) {
+                carouselPositions[roomId] = totalImages - 1;
+            } else if (carouselPositions[roomId] >= totalImages) {
+                carouselPositions[roomId] = 0;
+            }
+            
+            carousel.style.transform = `translateX(-${carouselPositions[roomId] * imageWidth}px)`;
+        }
+
+        // Quantity selector functionality
+        const quantities = {
+            deluxe: 1,
+            family: 1,
+            redrose: 1
+        };
+
+        function changeQuantity(roomId, change) {
+            quantities[roomId] += change;
+            if (quantities[roomId] < 1) quantities[roomId] = 1;
+            if (quantities[roomId] > 10) quantities[roomId] = 10;
+            
+            const qtyElement = document.getElementById(`qty-${roomId}`);
+            qtyElement.textContent = String(quantities[roomId]).padStart(2, '0');
+        }
+    </script>
+</body>
+</html>
+
